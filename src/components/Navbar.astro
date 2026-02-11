@@ -1,0 +1,49 @@
+---
+---
+<nav class="navbar">
+    <div class="navbar-content">
+        <div class="links">
+            <a href="/">HOME</a>
+            <a href="/contact">CONTACT</a>
+            <a href="/about">ABOUT</a>
+            <a href="/lesson-policies">LESSON POLICIES</a>
+            <a href="/resources">RESOURCES</a>
+        </div>
+    </div>
+</nav>
+
+<style>
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: #303030;
+        border-bottom: 1px solid #444;
+        padding: 1rem 0;
+    }
+
+    .navbar-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: flex-end; /* Align to the right */
+        align-items: center;
+    }
+
+    .links {
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .links a {
+        color: #ddd;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+
+    .links a:hover {
+        color: white;
+    }
+</style>
