@@ -1,11 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
 ---
 
 <Layout title="Contact - Drum Studio">
 	<main>
 		<h1>Contact</h1>
-        <p>This is the Contact page.</p>
+		<p class="subtitle">To schedule a lesson, please fill out the form below or email me directly at <a href="mailto:drum.lessons.with.rosina@gmail.com">drum.lessons.with.rosina@gmail.com</a>.</p>
+		<ContactForm />
 	</main>
 </Layout>
 
@@ -18,5 +20,18 @@ import Layout from '../layouts/Layout.astro';
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
+	}
+	.subtitle {
+		text-align: center;
+		margin-bottom: 2rem;
+		font-size: 1.1rem;
+		color: #ccc;
+	}
+	a {
+		color: white;
+		text-decoration: none;
+	}
+	a:hover {
+		text-decoration: underline;
 	}
 </style>

@@ -7,11 +7,13 @@ import logoImg from '../images/logo_landing_white_final.png';
 
 <Layout title="Drum Studio">
 	<div class="hero-image-container">
-		<Image src={drumsetImg} alt="Drumset" class="hero-image" />
+		<Image src={drumsetImg} alt="Drumset" class="hero-image" loading="eager"
+  fetchpriority="high"/>
 	</div>
 	<main>
 		<div class="logo-container">
-			<Image src={logoImg} alt="Business Logo" class="logo" />
+			<Image src={logoImg} alt="Business Logo" class="logo" loading="eager"
+  fetchpriority="high"/>
 		</div>
 		<div class="text-container">
 			<h1>Tones And Grooves</h1>
