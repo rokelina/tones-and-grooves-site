@@ -1,6 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Bio from '../components/Bio.astro';
+import { Image } from 'astro:assets';
+import rosinaPlayingImg from '../images/rosina_playing.jpg';
+import studioImg from '../images/studio.jpeg';
+import rosinaPlayingBwImg from '../images/rosina_playing_bw.jpg';
 ---
 
 <Layout title="About - Drum Studio">
@@ -9,6 +13,11 @@ import Bio from '../components/Bio.astro';
 		<h4>ROSINA SCAMPINO, DRUM INSTRUCTOR</h4>
 		<div class="bio-section">
 			<Bio />
+		</div>
+		<div class="gallery">
+			<Image src={rosinaPlayingImg} alt="Rosina playing drums" loading="eager" fetchpriority="high" />
+			<Image src={studioImg} alt="The drum studio" loading="eager" fetchpriority="high" />
+			<Image src={rosinaPlayingBwImg} alt="Rosina playing drums in black and white" loading="eager" fetchpriority="high" />
 		</div>
 	</main>
 </Layout>
@@ -27,5 +36,17 @@ import Bio from '../components/Bio.astro';
 		font-weight: 300;
 		letter-spacing: 1px;
 		margin: 0;
+	}
+	.gallery {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-top: 3rem;
+	}
+	.gallery img {
+		width: calc(33.333% - 0.66rem);
+		height: 200px; /* Force a consistent height */
+		object-fit: cover;
+		border-radius: 4px; /* Optional slight rounding to soften edge */
 	}
 </style>
