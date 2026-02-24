@@ -1,11 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Bio from '../components/Bio.astro';
 ---
 
 <Layout title="About - Drum Studio">
 	<main>
 		<h1>About</h1>
-        <p>This is the About page.</p>
+		<h4>ROSINA SCAMPINO, DRUM INSTRUCTOR</h4>
+		<div class="bio-section">
+			<Bio />
+		</div>
 	</main>
 </Layout>
 
@@ -18,5 +22,10 @@ import Layout from '../layouts/Layout.astro';
 		color: white;
 		font-size: 20px;
 		line-height: 1.6;
+	}
+	h4 {
+		font-weight: 300;
+		letter-spacing: 1px;
+		margin: 0;
 	}
 </style>
