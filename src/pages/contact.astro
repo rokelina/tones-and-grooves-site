@@ -13,7 +13,7 @@ import ContactForm from '../components/ContactForm.astro';
 
 <style>
 	main {
-		margin: auto;
+		margin: 0 auto;
 		padding: 1rem;
 		width: 800px;
 		max-width: calc(100% - 2rem);
@@ -33,5 +33,15 @@ import ContactForm from '../components/ContactForm.astro';
 	}
 	a:hover {
 		text-decoration: underline;
+	}
+
+	/* Responsive Styles */
+	@media (max-width: 768px) {
+		main {
+			font-size: 18px;
+		}
+		.subtitle {
+			font-size: 1rem;
+		}
 	}
 </style>

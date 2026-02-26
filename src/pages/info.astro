@@ -8,7 +8,7 @@ import Layout from '../layouts/Layout.astro';
 		<div class="info-content">
 			<ul>
 				<li><strong>Location:</strong> The studio is located in the Shoreview area, within walking distance of Chippewa Middle School.</li>
-				<li><strong>Format:</strong> Lessons are 30 minutes long and available in-person or online.</li>
+				<li><strong>Format:</strong> Lessons are 30 minutes long, held weekly, and available in-person or online.</li>
 				<li><strong>Rate:</strong> $35 per lesson, due at the time of the lesson.</li>
 				<li><strong>Cancellation Policy:</strong> Please provide at least 24 hours' notice if you need to cancel or reschedule a lesson. Cancellations made with less than 24 hours' notice are subject to the full lesson fee.</li>
 				<li><strong>Practice:</strong> To see progress and get the most out of our time, students are expected to practice at least 15 minutes a day.</li>
@@ -19,7 +19,7 @@ import Layout from '../layouts/Layout.astro';
 
 <style>
 	main {
-		margin: auto;
+		margin: 0 auto;
 		padding: 1rem;
 		width: 800px;
 		max-width: calc(100% - 2rem);
@@ -41,5 +41,15 @@ import Layout from '../layouts/Layout.astro';
 	}
 	.info-content li {
 		color: #e0e0e0;
+	}
+
+	/* Responsive Styles */
+	@media (max-width: 768px) {
+		main {
+			font-size: 18px;
+		}
+		.info-content ul {
+			font-size: 1rem;
+		}
 	}
 </style>
