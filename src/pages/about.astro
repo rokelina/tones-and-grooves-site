@@ -1,0 +1,163 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Bio from '../components/Bio.astro';
+import { Image } from 'astro:assets';
+import rosinaPlayingImg from '../images/rosina_playing.jpg';
+import studioImg from '../images/studio.jpeg';
+import rosinaPlayingBwImg from '../images/rosina_playing_bw.jpg';
+---
+
+<Layout title="About - Drum Studio">
+	<main>
+		<h1>About</h1>
+		<h4>ROSINA SCAMPINO, DRUM INSTRUCTOR</h4>
+		<div class="bio-section">
+			<Bio />
+		</div>
+		<div class="gallery-wrapper">
+			<div class="gallery" id="mobile-gallery">
+				<Image src={rosinaPlayingImg} alt="Rosina playing drums" loading="eager" fetchpriority="high" />
+				<Image src={studioImg} alt="The drum studio" loading="eager" fetchpriority="high" />
+				<Image src={rosinaPlayingBwImg} alt="Rosina playing drums in black and white" loading="eager" fetchpriority="high" />
+			</div>
+			<div class="scroll-hint left" id="scroll-left">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+			</div>
+			<div class="scroll-hint right" id="scroll-right">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: 0 auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	h4 {
+		font-weight: 300;
+		letter-spacing: 1px;
+		margin: 0;
+	}
+	.gallery-wrapper {
+		margin-top: 3rem;
+		position: relative;
+	}
+	.gallery {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+	.gallery img {
+		width: calc(33.333% - 0.66rem);
+		height: 200px; /* Force a consistent height */
+		object-fit: cover;
+		border-radius: 4px; /* Optional slight rounding to soften edge */
+	}
+	.scroll-hint {
+		display: none;
+	}
+
+	/* Responsive Styles */
+	@media (max-width: 768px) {
+		main {
+			font-size: 18px;
+		}
+	}
+
+	@media (max-width: 768px) and (orientation: portrait) {
+		.gallery {
+			flex-direction: row;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			gap: 1rem;
+			padding-bottom: 0.5rem;
+			scrollbar-width: none; /* Firefox */
+			-ms-overflow-style: none; /* IE and Edge */
+		}
+		.gallery::-webkit-scrollbar {
+			display: none; /* Safari and Chrome */
+		}
+		.gallery img {
+			flex: 0 0 100%;
+			scroll-snap-align: center;
+			width: 100%;
+			max-width: none;
+			height: auto;
+			aspect-ratio: 4/3;
+		}
+		.scroll-hint {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: 10px;
+			background: rgba(0, 0, 0, 0.4);
+			border-radius: 50%;
+			width: 36px;
+			height: 36px;
+			color: rgba(255, 255, 255, 0.9);
+			pointer-events: none;
+			transition: opacity 0.3s ease;
+			z-index: 10;
+		}
+		.scroll-hint.right {
+			right: 10px;
+			animation: swipe-pulse-right 2s infinite;
+		}
+		.scroll-hint.left {
+			left: 10px;
+			opacity: 0;
+			animation: swipe-pulse-left 2s infinite;
+		}
+
+		@keyframes swipe-pulse-right {
+			0%, 100% { transform: translateX(0); opacity: 0.7; }
+			50% { transform: translateX(5px); opacity: 1; }
+		}
+		@keyframes swipe-pulse-left {
+			0%, 100% { transform: translateX(0); opacity: 0.7; }
+			50% { transform: translateX(-5px); opacity: 1; }
+		}
+	}
+</style>
+
+<script>
+	function setupGalleryScroll() {
+		const gallery = document.getElementById('mobile-gallery');
+		const leftHint = document.getElementById('scroll-left');
+		const rightHint = document.getElementById('scroll-right');
+
+		if (!gallery || !leftHint || !rightHint) return;
+
+		const handleScroll = () => {
+			const maxScrollLeft = gallery.scrollWidth - gallery.clientWidth;
+			
+			if (gallery.scrollLeft > 10) {
+				leftHint.style.opacity = '1';
+			} else {
+				leftHint.style.opacity = '0';
+			}
+
+			if (gallery.scrollLeft >= maxScrollLeft - 10) {
+				rightHint.style.opacity = '0';
+			} else {
+				rightHint.style.opacity = '1';
+			}
+		};
+
+		gallery.addEventListener('scroll', handleScroll);
+		
+		// Run initial check
+		handleScroll();
+	}
+
+	// Setup on page load and view transitions
+	document.addEventListener('astro:page-load', setupGalleryScroll);
+</script>
