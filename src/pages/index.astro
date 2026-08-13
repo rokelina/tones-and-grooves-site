@@ -1,24 +1,36 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import drumsetImg from '../images/drumset_landing_page_3_low_small.jpg';
-import logoImg from '../images/logo_landing_white_final_small.png';
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import drumsetImg from "../images/drumset_landing_page_3_low_small.jpg";
+import logoImg from "../images/logo_landing_white_final_small.png";
 ---
 
 <Layout title="Tones And Grooves Drum Studio">
 	<main>
 		<div class="logo-container">
-			<Image src={logoImg} alt="Business Logo" class="logo" loading="eager"
-  fetchpriority="high"/>
+			<Image
+				src={logoImg}
+				alt="Business Logo"
+				class="logo"
+				loading="eager"
+				fetchpriority="high"
+			/>
 		</div>
 		<div class="text-container">
 			<h1>Tones And Grooves</h1>
-			<h4 style="font-style: italic; font-weight: 300;">Drum lessons in Shoreview, MN tailored to all ages and skill levels</h4>
+			<h4 style="font-style: italic; font-weight: 300;">
+				Drum lessons in Shoreview, MN and online.
+			</h4>
 		</div>
 	</main>
 	<div class="hero-image-container">
-		<Image src={drumsetImg} alt="Drumset" class="hero-image" loading="eager"
-  fetchpriority="high"/>
+		<Image
+			src={drumsetImg}
+			alt="Drumset"
+			class="hero-image"
+			loading="eager"
+			fetchpriority="high"
+		/>
 	</div>
 </Layout>
 
@@ -35,7 +47,7 @@ import logoImg from '../images/logo_landing_white_final_small.png';
 		object-fit: cover;
 		object-position: center;
 		aspect-ratio: 16 / 9;
-		filter: contrast(1.1)
+		filter: contrast(1.1);
 	}
 	main {
 		flex: 1;
@@ -51,7 +63,8 @@ import logoImg from '../images/logo_landing_white_final_small.png';
 		align-items: center;
 		gap: 2rem;
 	}
-	h1, h4 {
+	h1,
+	h4 {
 		margin: 0;
 	}
 	.logo-container {
