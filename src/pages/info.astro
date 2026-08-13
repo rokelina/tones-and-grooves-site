@@ -14,6 +14,107 @@ import Layout from '../layouts/Layout.astro';
 				<li><strong>Practice:</strong> To see progress and get the most out of our time, students are expected to practice at least 15 minutes a day.</li>
 			</ul>
 		</div>
+
+		<hr class="divider" />
+
+		<h1>Curriculum</h1>
+		<div class="curriculum-content">
+			<p>Most of us start playing an instrument to be able to sit down and play the music we love. That's a great goal, and it's the one we're always aiming at.</p>
+			<p>But the fastest way to get there isn't to spend every lesson on songs. It's to build the skills underneath them. Students who put time into these foundational areas learn songs faster, play them more comfortably, achieve greater musicality and stop hitting the same wall every few months.</p>
+			<p>So in our lessons we'll work on four things: technique, reading, timekeeping, and playing music you're excited about. That structure doesn't change. What changes is the material, the pace, and the styles we pull from. I ask what you listen to, what you want to be able to play, and what your week actually looks like, and I build the content around those answers.</p>
+
+			<h2>Technique</h2>
+			<p>Technique is the foundation for playing any instrument efficiently. It allows you to get more sound with less effort, protects you from injury, and expands what you're able to express musically.</p>
+			<p>We'll work on the free stroke and the Moeller stroke, the two techniques that will carry most of your playing.</p>
+			<p>Technique is muscle memory, which means it responds to frequency, not marathon sessions. Short, focused, regular practice is what makes it stick. Five well-executed minutes every day will beat an hour once a week.</p>
+
+			<h2>Reading</h2>
+			<p>We'll start with the fundamentals of music notation and simple rhythms, then add complexity progressively as you get comfortable. Reading isn't just an academic exercise: it's a way to absorb new vocabulary, it's how you'll learn material on your own between lessons, and it opens the door to playing with other musicians.</p>
+			<p>For students who want to take it further — auditions, drum corps, orchestral playing, or just the challenge of it — the path continues into rudimental solos and classical snare etudes.</p>
+			
+			<h2>Timekeeping</h2>
+			<p>This is the bread and butter of drumming. Playing grooves and embellishments (fills) while holding a steady tempo is the drummer's main job in any ensemble. It's also the thing every bandmate you'll ever play with will notice first.</p>
+			<p>We'll build this through ostinatos and coordination exercises, drawing on established methods like The New Breed and Syncopation.</p>
+			<p>Whether we spend our time in rock, funk, jazz, Latin, or somewhere else entirely depends on what you want to play.</p>
+
+			<h2>Play-Along and Free Exploration</h2>
+			<p>I think it's important to leave room in every lesson and every practice session for following your own interests.</p>
+			<p>That might mean playing along to a song we've been working on, or taking a concept from the lesson and running with it: for example, orchestrating a fill around the kit, writing your own ostinatos, or working out a part by ear.</p>
+			<p>This is the part most students look forward to, and it's also where you find out what all the other work is for.</p>
+
+			<h2>Structured Practice</h2>
+			<p>How you practice matters as much as how long you practice. Here's an idea for how to structure your practice time.</p>
+			
+			<div class="table-container">
+				<table class="practice-table">
+					<thead>
+						<tr>
+							<th>Area</th>
+							<th>Share of your practice time</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Technique</td>
+							<td>20%</td>
+						</tr>
+						<tr>
+							<td>Reading</td>
+							<td>20%</td>
+						</tr>
+						<tr>
+							<td>Timekeeping</td>
+							<td>40%</td>
+						</tr>
+						<tr>
+							<td>Free choice: play-alongs, exploration, whatever motivates you</td>
+							<td>20%</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<p>In practice, that looks like:</p>
+
+			<div class="table-container">
+				<table class="practice-table">
+					<thead>
+						<tr>
+							<th>Session length</th>
+							<th>Technique</th>
+							<th>Reading</th>
+							<th>Timekeeping</th>
+							<th>Free choice</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>20 minutes</td>
+							<td>4 min</td>
+							<td>4 min</td>
+							<td>8 min</td>
+							<td>4 min</td>
+						</tr>
+						<tr>
+							<td>30 minutes</td>
+							<td>6 min</td>
+							<td>6 min</td>
+							<td>12 min</td>
+							<td>6 min</td>
+						</tr>
+						<tr>
+							<td>60 minutes</td>
+							<td>12 min</td>
+							<td>12 min</td>
+							<td>24 min</td>
+							<td>12 min</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			
+			<p>A short session that covers all four areas is worth more than a long one spent only on the fun part. And a consistent twenty minutes a day will take you further than three hours crammed into a Sunday afternoon.</p>
+		</div>
 	</main>
 </Layout>
 
@@ -41,6 +142,54 @@ import Layout from '../layouts/Layout.astro';
 	}
 	.info-content li {
 		color: #e0e0e0;
+	}
+
+	.curriculum-content {
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+		margin-bottom: 3rem;
+	}
+	.curriculum-content h2 {
+		margin-top: 1.5rem;
+		margin-bottom: 0.5rem;
+		color: #fff;
+		font-size: 1.5rem;
+	}
+	.curriculum-content p {
+		color: #e0e0e0;
+		font-size: 1.1rem;
+		line-height: 1.6;
+		margin: 0;
+	}
+	.table-container {
+		overflow-x: auto;
+		margin: 1rem 0;
+	}
+	.practice-table {
+		width: 100%;
+		border-collapse: collapse;
+		color: #e0e0e0;
+		font-size: 1rem;
+	}
+	.practice-table th, .practice-table td {
+		padding: 0.8rem;
+		text-align: left;
+		border-bottom: 1px solid #333;
+	}
+	.practice-table th {
+		background-color: rgba(255, 255, 255, 0.05);
+		color: #fff;
+		font-weight: 600;
+	}
+	.practice-table tbody tr:hover {
+		background-color: rgba(255, 255, 255, 0.02);
+	}
+	.divider {
+		border: 0;
+		height: 1px;
+		background: #333;
+		margin: 3rem 0;
 	}
 
 	/* Responsive Styles */
