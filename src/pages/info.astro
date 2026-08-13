@@ -58,6 +58,10 @@ import Layout from "../layouts/Layout.astro";
 				what you want to be able to play, and what your week actually
 				looks like, and I build the content around those answers.
 			</p>
+			<div class="resources-links">
+				<a href="/BookList.pdf" target="_blank" class="resource-link">Recommended Book List (PDF)</a>
+				<a href="/PracticeLogTemplate.docx" target="_blank" class="resource-link">Practice Log Template (DOCX)</a>
+			</div>
 
 			<h2>Technique</h2>
 			<p>
@@ -259,6 +263,24 @@ import Layout from "../layouts/Layout.astro";
 		font-size: 1rem;
 		line-height: 1.6;
 		margin: 0;
+	}
+	.resources-links {
+		display: flex;
+		gap: 1rem;
+		margin: 1rem 0 2rem 0;
+		flex-wrap: wrap;
+	}
+	.resource-link {
+		background-color: rgba(255, 255, 255, 0.1);
+		color: white;
+		padding: 0.5rem 1rem;
+		border-radius: 4px;
+		text-decoration: none;
+		font-size: 0.95rem;
+		transition: background-color 0.2s;
+	}
+	.resource-link:hover {
+		background-color: rgba(255, 255, 255, 0.2);
 	}
 	.table-container {
 		overflow-x: auto;
